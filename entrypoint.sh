@@ -13,6 +13,9 @@ EOF
 
 chmod 0600 $PGPASSFILE
 
+# Target database name defaults to the source database name.
+TARGET_DB=${TARGET_DB:=$SOURCE_DB}
+
 echo "Ensuring '${TARGET_DB}' exists..."
 
 createdb \
